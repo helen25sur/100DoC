@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(30, 30, 30);
+}
+
+form {
+  width: 30rem;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: rgb(220, 220, 220);
+  border-radius: 6px;
+}
+
+input {
+  width: 100%;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+button {
+  display: block;
+}
