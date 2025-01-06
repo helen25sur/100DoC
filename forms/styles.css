@@ -20,7 +20,9 @@ label {
   margin-bottom: 0.5rem;
 }
 
-input {
+input,
+textarea,
+select {
   width: 100%;
   display: block;
   margin-bottom: 1rem;
@@ -30,7 +32,8 @@ input {
   border: 1px solid rgb(184, 184, 184);
 }
 
-#username:focus-visible {
+input:focus-visible,
+textarea:focus-visible {
   background-color: rgb(219, 190, 253);
   color: rgb(32, 5, 63);
   border-color: rgb(32, 5, 63);
@@ -50,4 +53,13 @@ button {
 button:hover {
   background-color: rgb(50, 9, 97);
   border-color: rgb(50, 9, 97);
+}
+
+.form-control-inline {
+  display: flex;
+}
+
+.form-control-inline input {
+  width: auto;
+  margin-right: 0.5rem;
 }
