@@ -12,57 +12,89 @@
 </head>
 
 <body>
-  <form action="/" method="GET">
-    <label for="username">Your name: </label>
-    <input type="text" name="user-name" id="username" />
+  <header>
+    <h1>Demo Form</h1>
+  </header>
+  <main>
+    <form action="/" method="GET">
+      <fieldset>
+        <legend>Your personal details</legend>
+        <div>
+          <label for="username">Your name: </label>
+          <input type="text" name="user-name" id="username" placeholder="John Joe" required />
+        </div>
 
-    <label for="usermessage">Your message:</label>
-    <textarea name="user message" id="usermessage"></textarea>
+        <div>
+          <label for="useremail">Your email:</label>
+          <input type="email" name="user-email" id="useremail" placeholder="test@gmail.com" required />
+        </div>
+      </fieldset>
 
-    <label for="useremail">Your email:</label>
-    <input type="email" name="user-email" id="useremail" />
-    <label for="userage">Your age:</label>
-    <input type="number" name="user-age" id="userage">
-    <label for="birthdate">Your birthdate</label>
-    <input type="date" name="user-birthdate" id="birthdate">
+      <fieldset>
+        <legend>More details</legend>
+        <div>
+          <label for="userage">Your age:</label>
+          <input type="number" name="user-age" id="userage" min="18" max="120" required />
+        </div>
+        <div>
+          <label for="birthdate">Your birthdate</label>
+          <input type="date" name="user-birthdate" id="birthdate" required min="1905-01-01" max="2006-01-01" />
+        </div>
+        <div>
+          <label for="favorite-color">Your favorite color?</label>
+          <select name="favorite-color" id="favorite-color">
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="red">Red</option>
+            <option value="yellow">Yellow</option>
+          </select>
+        </div>
+      </fieldset>
 
-    <label for="favorite-color">Your favorite color?</label>
-    <select name="favorite-color" id="favorite-color">
-      <option value="green">Green</option>
-      <option value="blue">Blue</option>
-      <option value="red">Red</option>
-      <option value="yellow">Yellow</option>
-    </select>
-    <hr>
-    <h2>How we should verify your account?</h2>
-    <div class="form-control-inline">
-      <input type="radio" name="verify" id="verify-sms" value="text-message">
-      <label for="verify-sms">Via a text messages (SMS)
-      </label>
-    </div>
-    <div class="form-control-inline">
-      <input type="radio" name="verify" id="verify-phone" value="phone-call">
-      <label for="verify-phone">Via a phone call</label>
-    </div>
-    <div class="form-control-inline">
-      <input type="radio" name="verify" id="verify-email" value="email-letter">
-      <label for="verify-email">Via an email</label>
-    </div>
-    <hr>
-    <div class="form-control-inline">
-      <input type="checkbox" name="terms" id="argee-terms">
-      <label for="argee-terms">Agree to terms?</label>
-    </div>
-    <div class="form-control-inline">
-      <input type="checkbox" name="contact" id="contact-email" value="email">
-      <label for="argee-terms">Contact me via email</label>
-    </div>
-    <div class="form-control-inline">
-      <input type="checkbox" name="contact" id="contact-phone" value="phone">
-      <label for="argee-terms">Contact me via phone</label>
-    </div>
-    <button type="submit">Send</button>
-  </form>
+      <fieldset>
+        <label for="usermessage">Your message:</label>
+        <textarea name="user message" id="usermessage" rows="6"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>How we should verify your account?</legend>
+        <div class="form-control-inline">
+          <input type="radio" name="verify" id="verify-sms" value="text-message" required />
+          <label for="verify-sms">Via a text messages (SMS)
+          </label>
+        </div>
+        <div class="form-control-inline">
+          <input type="radio" name="verify" id="verify-phone" value="phone-call" required />
+          <label for="verify-phone">Via a phone call</label>
+        </div>
+        <div class="form-control-inline">
+          <input type="radio" name="verify" id="verify-email" value="email-letter" required />
+          <label for="verify-email">Via an email</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>How should we contact you?</legend>
+        <div class="form-control-inline">
+          <input type="checkbox" name="contact" id="contact-email" value="email" />
+          <label for="argee-terms">Contact me via email</label>
+        </div>
+        <div class="form-control-inline">
+          <input type="checkbox" name="contact" id="contact-phone" value="phone" />
+          <label for="argee-terms">Contact me via phone</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="form-control-inline">
+          <input type="checkbox" name="terms" id="argee-terms" />
+          <label for="argee-terms">Agree to terms?</label>
+        </div>
+      </fieldset>
+
+      <button type="submit">Send</button>
+    </form>
+  </main>
 
 </body>
 
