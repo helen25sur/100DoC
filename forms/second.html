@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="second.css">
+</head>
+
+<body>
+  <header>
+    <h1>Contact us</h1>
+  </header>
+  <main>
+    <form action="/" method="GET">
+      <fieldset>
+        <legend>How can we help you?</legend>
+        <div>
+          <label for="username">Your Name</label>
+          <input type="text" name="user-name" id="username" required />
+        </div>
+        <div>
+          <label for="useremail">Your Email</label>
+          <input type="email" name="user-email" id="useremail" required />
+        </div>
+        <div>
+          <label for="usernumber">Your Phone Number</label>
+          <input type="tel" name="user-number" id="usernumber" required />
+        </div>
+        <div>
+          <label for="usermessage">Your Message</label>
+          <textarea name="user-message" id="usermessage" required></textarea>
+        </div>
+        <div>
+          <label for="findus">How did you find us?</label>
+          <select name="find-us" id="findus">
+            <option value="web search">Web Search</option>
+            <option value="social networks">Social Networks</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>How should we reply?</legend>
+        <div class="inline-input-control">
+          <input type="radio" name="reply" id="phone-call" />
+          <label for="phone-call">Call me</label>
+        </div>
+        <div class="inline-input-control">
+          <input type="radio" name="reply" id="email" />
+          <label for="email">Send me an email</label>
+        </div>
+        <div class="inline-input-control">
+          <input type="radio" name="reply" id="dont-reply" checked>
+          <label for="dont-reply">Don't reply</label>
+        </div>
+
+        <div class="inline-input-control">
+          <input type="checkbox" name="terms" id="terms" />
+          <label for="terms">Accept Terms</label>
+        </div>
+      </fieldset>
+
+      <div class="block-btn">
+        <button class="btn outline" type="reset">Clear</button>
+        <button class="btn fill" type="submit">Submit</button>
+      </div>
+    </form>
+  </main>
+</body>
+
+</html>
