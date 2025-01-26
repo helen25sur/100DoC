@@ -2,18 +2,61 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DOM - JavaScript</title>
   <script src="app.js" defer></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      background-color: rgb(35 37 23);
+      font-family: sans-serif;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 60%;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: rgb(255 250 188);
+      border-radius: 8px;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    label {
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    input {
+      width: 50%;
+      line-height: 150%;
+      background-color: rgb(255 250 188);
+      font: inherit;
+      border: 1px solid black;
+      border-radius: 4px;
+    }
+
+    button {
+      align-self: self-start;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Hi there!</h1>
-  <p>
-    This is a
-    <a href="#">link</a>
-  </p>
+  <main>
+    <form action="/" method="GET">
+      <label for="productname">Product Name</label>
+      <div>
+        <input type="text" name="product_name" id="productname" />
+        <span><span id="counter">66</span>/66</span>
+      </div>
+      <button>Submit</button>
+    </form>
+  </main>
 </body>
 
 </html>
