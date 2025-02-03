@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic-Tac-Toe Game</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <script src="./app.js" defer></script>
+</head>
+
+<body>
+  <header class="p-8 bg-teal-900 text-white text-center shadow-md">
+    <h1 class="my-2 text-5xl font-bold">Play Tic-Tac-Toe</h1>
+    <p>Build with HTML, CSS, JavaScript and - of course - lots of love!</p>
+  </header>
+  <main class="bg-slate-100">
+    <section class="p-10 flex items-center justify-center gap-8" id="players">
+      <div
+        class="card py-6 px-18 bg-teal-100 flex flex-col items-center shadow-md rounded-sm border border-teal-400 font-medium">
+        <p>Player 1</p>
+        <h3 class="text-teal-800 text-xl">PLAYER NAME</h3>
+        <p class="symbol text-2xl my-2">X</p>
+        <button class="hover:bg-teal-200 py-1 px-2 rounded-sm font-normal cursor-pointer">Edit</button>
+      </div>
+      <div
+        class="card py-6 px-18 bg-teal-100 flex flex-col items-center shadow-md rounded-sm border border-teal-400 font-medium  ">
+        <p>Player 2</p>
+        <h3 class="text-teal-800 text-xl">PLAYER NAME</h3>
+        <p class="symbol text-2xl my-2">O</p>
+        <button class="hover:bg-teal-200 py-1 px-2 rounded-sm font-normal cursor-pointer">Edit</button>
+      </div>
+    </section>
+    <section class="flex items-center justify-center" id="game">
+      <button class="py-2 px-6 m-4 bg-teal-900 text-white shadow-md rounded-sm cursor-pointer">Start New Game</button>
+    </section>
+  </main>
+</body>
+
+</html>
