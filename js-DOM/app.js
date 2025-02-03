@@ -8,21 +8,12 @@ input.addEventListener('input', (evt) => {
   const length = value.length;
   const remainedChars = startLengthQuery - length;
   counter.innerText = remainedChars;
-  if (remainedChars <= 0) {
-    input.setAttribute('readonly', true);
-  } else if (remainedChars <= 10) {
-    input.classList.add('highlighted');
-    counter.classList.add('highlighted');
+  if (remainedChars <= 10) {
+    input.classList.add('warning');
+    counter.classList.add('warning');
   } else if (remainedChars > 10) {
-    input.classList.remove('highlighted');
-    counter.classList.remove('highlighted');
+    input.classList.remove('warning');
+    counter.classList.remove('warning');
   }
 
 });
-
-document.body.addEventListener('keydown', (evt) => {
-  if (evt.key == 'Backspace' || evt.key == 'Delete' && input.hasAttribute('readonly')) {
-    input.removeAttribute('readonly');
-    console.log(evt)
-  }
-})

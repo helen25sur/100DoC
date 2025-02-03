@@ -44,11 +44,11 @@
       align-self: self-start;
     }
 
-    input.highlighted {
+    input.warning {
       background-color: rgb(255, 166, 166);
     }
 
-    .highlighted#counter {
+    .warning#counter {
       color: rgb(255, 100, 100);
     }
   </style>
@@ -59,7 +59,7 @@
     <form action="/" method="GET">
       <label for="productname">Product Name</label>
       <div>
-        <input type="text" name="product_name" id="productname" />
+        <input type="text" name="product_name" id="productname" maxlength="66" />
         <span><span id="counter">66</span>/66</span>
       </div>
       <button>Submit</button>
