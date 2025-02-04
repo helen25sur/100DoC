@@ -5,34 +5,103 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tic-Tac-Toe Game</title>
-  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-  <script src="./app.js" defer></script>
+  <link rel="stylesheet" href="./src/output.css">
+  <link rel="stylesheet" href="./src/styles.css">
+  <script src="./src/app.js" defer></script>
 </head>
 
-<body>
-  <header class="p-8 bg-teal-900 text-white text-center shadow-md">
+<body class="bg-slate-100">
+  <div class="backdrop"></div>
+  <header class="p-6 bg-teal-900 text-white text-center shadow-md">
     <h1 class="my-2 text-5xl font-bold">Play Tic-Tac-Toe</h1>
     <p>Build with HTML, CSS, JavaScript and - of course - lots of love!</p>
   </header>
-  <main class="bg-slate-100">
-    <section class="p-10 flex items-center justify-center gap-8" id="players">
-      <div
-        class="card py-6 px-18 bg-teal-100 flex flex-col items-center shadow-md rounded-sm border border-teal-400 font-medium">
-        <p>Player 1</p>
-        <h3 class="text-teal-800 text-xl">PLAYER NAME</h3>
-        <p class="symbol text-2xl my-2">X</p>
-        <button class="hover:bg-teal-200 py-1 px-2 rounded-sm font-normal cursor-pointer">Edit</button>
-      </div>
-      <div
-        class="card py-6 px-18 bg-teal-100 flex flex-col items-center shadow-md rounded-sm border border-teal-400 font-medium  ">
-        <p>Player 2</p>
-        <h3 class="text-teal-800 text-xl">PLAYER NAME</h3>
-        <p class="symbol text-2xl my-2">O</p>
-        <button class="hover:bg-teal-200 py-1 px-2 rounded-sm font-normal cursor-pointer">Edit</button>
-      </div>
+  <dialog class="config-user">
+    <div class="p-10">
+      <h2 class="text-3xl text-center text-teal-800 font-bold">Choose your name</h2>
+      <form>
+        <div class="flex flex-col items-center gap-2 text-2xl">
+          <label for="playername">Player name</label>
+          <input type="text" name="playername" id="playername" class="border border-teal-900 rounded-sm" />
+          <div>
+            <button type="button"
+              class="hover:bg-teal-100 py-1 px-2 rounded-sm font-normal cursor-pointer">Cancel</button>
+            <button type="submit"
+              class="bg-teal-100 hover:bg-teal-200 py-1 px-2 rounded-sm font-normal cursor-pointer">Confirm</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <main class="p-8">
+    <section id="players">
+      <ol class="flex items-center justify-center gap-8">
+        <li>
+          <div
+            class="card py-4 px-14 bg-teal-100 flex flex-col items-center shadow-md rounded-sm border border-teal-400 font-medium">
+            <h2>Player 1</h2>
+            <h3 class="text-teal-800 text-xl">PLAYER NAME</h3>
+            <p class="symbol text-3xl my-2">X</p>
+            <button
+              class="bg-teal-100 hover:bg-teal-200 py-1 px-2 rounded-sm font-normal cursor-pointer text-teal-800 font-semibold">Edit</button>
+          </div>
+        </li>
+        <li>
+          <div
+            class="card py-4 px-14 bg-teal-100 flex flex-col items-center shadow-md rounded-sm border border-teal-400 font-medium">
+            <h2>Player 2</h2>
+            <h3 class="text-teal-800 text-xl">PLAYER NAME</h3>
+            <p class="symbol text-3xl my-2">O</p>
+            <button
+              class="bg-teal-100 hover:bg-teal-200 py-1 px-2 rounded-sm font-normal cursor-pointer text-teal-800 font-semibold">Edit</button>
+          </div>
+        </li>
+      </ol>
+
+
     </section>
-    <section class="flex items-center justify-center" id="game">
-      <button class="py-2 px-6 m-4 bg-teal-900 text-white shadow-md rounded-sm cursor-pointer">Start New Game</button>
+    <section class="flex flex-col items-center justify-center" id="game">
+      <button class="py-2 px-6 m-4 bg-teal-900 text-white shadow-md rounded-sm cursor-pointer">Start New
+        Game</button>
+      <div class="text-center p-8 hidden">
+        <h3 class="text-2xl">You won, <span id="winner-name" class="text-teal-800 font-semibold">PLAYER NAME</span></h3>
+        <p>Click "Start New Game" above, to play again!</p>
+      </div>
+      <p class="text-xl">It's your turn <span id="active-player-name" class="text-teal-800 font-semibold">PLAYER
+          NAME</span>!</p>
+      <ol id="game-field" class="grid grid-cols-3 gap-2 p-8">
+        <li
+          class="game-field-item bg-teal-200 hover:bg-teal-900 w-24 h-24 rounded-sm cursor-pointer text-5xl flex items-center justify-center disabled">
+          X
+        </li>
+        <li
+          class="game-field-item bg-teal-200 hover:bg-teal-900 w-24 h-24 rounded-sm cursor-pointer text-5xl flex items-center justify-center">
+        </li>
+        <li
+          class="game-field-item bg-teal-200 hover:bg-teal-900 w-24 h-24 rounded-sm cursor-pointer text-5xl flex items-center justify-center disabled">
+          O</li>
+        <li
+          class="game-field-item bg-teal-200 hover:bg-teal-900 w-24 h-24 rounded-sm cursor-pointer text-5xl flex items-center justify-center">
+        </li>
+        <li
+          class="game-field-item bg-teal-200 hover:bg-teal-900 w-24 h-24 rounded-sm cursor-pointer text-5xl flex items-center justify-center disabled">
+          X
+        </li>
+        <li
+          class="game-field-item bg-teal-200 hover:bg-teal-900 w-24 h-24 rounded-sm cursor-pointer text-5xl flex items-center justify-center">
+        </li>
+        <li
+          class="game-field-item bg-teal-200 hover:bg-teal-900 w-24 h-24 rounded-sm cursor-pointer text-5xl flex items-center justify-center">
+        </li>
+        <li
+          class="game-field-item bg-teal-200 hover:bg-teal-900 w-24 h-24 rounded-sm cursor-pointer text-5xl flex items-center justify-center">
+        </li>
+        <li
+          class="game-field-item bg-teal-200 hover:bg-teal-900 w-24 h-24 rounded-sm cursor-pointer text-5xl flex items-center justify-center disabled">
+          O
+        </li>
+      </ol>
     </section>
   </main>
 </body>
