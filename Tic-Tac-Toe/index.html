@@ -22,10 +22,14 @@
       <h2 class="text-3xl text-center text-teal-800 font-bold">Choose your name</h2>
       <form>
         <div class="flex flex-col items-center gap-2 text-2xl">
-          <label for="playername">Player name</label>
-          <input type="text" name="playername" id="playername" class="border border-teal-900 rounded-sm" />
           <div>
-            <button type="button" id="close-dialog"
+            <label for="playername">Player name</label>
+            <input type="text" name="playername" id="playername" class="border border-teal-900 rounded-sm my-4"
+              required />
+          </div>
+          <p class="text-sm text-red-800" id="config-errors"></p>
+          <div>
+            <button type="reset" id="close-dialog"
               class="hover:bg-teal-100 py-1 px-2 rounded-sm font-normal cursor-pointer">Cancel</button>
             <button type="submit"
               class="bg-teal-100 hover:bg-teal-200 py-1 px-2 rounded-sm font-normal cursor-pointer">Confirm</button>
@@ -39,23 +43,25 @@
     <section id="players">
       <ol class="flex items-center justify-center gap-8">
         <li>
-          <div
+          <div id="player-1-data"
             class="card py-4 px-14 bg-teal-100 flex flex-col items-center shadow-md rounded-sm border border-teal-400 font-medium">
             <h2>Player 1</h2>
             <h3 class="text-teal-800 text-xl">PLAYER NAME</h3>
             <p class="symbol text-3xl my-2">X</p>
             <button id="edit-player-1-btn"
-              class="bg-teal-100 hover:bg-teal-200 py-1 px-2 rounded-sm font-normal cursor-pointer text-teal-800 font-semibold">Edit</button>
+              class="bg-teal-100 hover:bg-teal-200 py-1 px-2 rounded-sm cursor-pointer text-teal-800 font-semibold"
+              data-playerid="1">Edit</button>
           </div>
         </li>
         <li>
-          <div
+          <div id="player-2-data"
             class="card py-4 px-14 bg-teal-100 flex flex-col items-center shadow-md rounded-sm border border-teal-400 font-medium">
             <h2>Player 2</h2>
             <h3 class="text-teal-800 text-xl">PLAYER NAME</h3>
             <p class="symbol text-3xl my-2">O</p>
             <button id="edit-player-2-btn"
-              class="bg-teal-100 hover:bg-teal-200 py-1 px-2 rounded-sm font-normal cursor-pointer text-teal-800 font-semibold">Edit</button>
+              class="bg-teal-100 hover:bg-teal-200 py-1 px-2 rounded-sm cursor-pointer text-teal-800 font-semibold"
+              data-playerid="2">Edit</button>
           </div>
         </li>
       </ol>

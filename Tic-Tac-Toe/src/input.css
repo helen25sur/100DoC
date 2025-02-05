@@ -21,3 +21,13 @@
   background-color: var(--color-teal-900);
 
 }
+
+.error label {
+  color: var(--color-red-700);
+}
+
+.error input {
+  border-color: var(--color-red-700);
+  color: var(--color-red-700);
+  background-color: var(--color-red-100);
+}
