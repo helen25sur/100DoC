@@ -44,7 +44,7 @@
       <ol class="flex items-center justify-center gap-8">
         <li>
           <div id="player-1-data"
-            class="card py-4 px-14 bg-teal-100 flex flex-col items-center shadow-md rounded-sm border border-teal-400 font-medium">
+            class="card min-w-[245px] py-4 px-14 bg-teal-100 flex flex-col items-center shadow-md rounded-sm border border-teal-400 font-medium">
             <h2>Player 1</h2>
             <h3 class="text-teal-800 text-xl">PLAYER NAME</h3>
             <p class="symbol text-3xl my-2">X</p>
@@ -55,7 +55,7 @@
         </li>
         <li>
           <div id="player-2-data"
-            class="card py-4 px-14 bg-teal-100 flex flex-col items-center shadow-md rounded-sm border border-teal-400 font-medium">
+            class="card min-w-[245px] py-4 px-14 bg-teal-100 flex flex-col items-center shadow-md rounded-sm border border-teal-400 font-medium">
             <h2>Player 2</h2>
             <h3 class="text-teal-800 text-xl">PLAYER NAME</h3>
             <p class="symbol text-3xl my-2">O</p>
@@ -66,49 +66,46 @@
         </li>
       </ol>
       <div class="text-center">
-        <button class="py-2 px-6 m-4 bg-teal-900 text-white shadow-md rounded-sm cursor-pointer">Start New
-
+        <button id="start-game-btn"
+          class="py-2 px-6 m-4 bg-teal-900 text-white shadow-md rounded-sm cursor-pointer">Start New Game</button>
       </div>
 
     </section>
     <section class="flex flex-col items-center justify-center" id="game">
-      Game</button>
       <div class="text-center p-8 hidden">
         <h3 class="text-2xl">You won, <span id="winner-name" class="text-teal-800 font-semibold">PLAYER NAME</span></h3>
         <p>Click "Start New Game" above, to play again!</p>
       </div>
-      <p class="text-xl">It's your turn <span id="active-player-name" class="text-teal-800 font-semibold">PLAYER
+      <p class="text-xl hidden" id="player-turn">It's your turn <span id="active-player-name"
+          class="text-teal-800 font-semibold">PLAYER
           NAME</span>!</p>
-      <ol id="game-field" class="grid grid-cols-3 gap-2 p-8">
-        <li
-          class="game-field-item bg-teal-200 hover:bg-teal-900 w-24 h-24 rounded-sm cursor-pointer text-5xl flex items-center justify-center disabled">
-          X
-        </li>
-        <li
+      <ol id="game-field" class="grid grid-cols-3 gap-2 p-8 hidden">
+        <li data-col="1" data-row="1"
           class="game-field-item bg-teal-200 hover:bg-teal-900 w-24 h-24 rounded-sm cursor-pointer text-5xl flex items-center justify-center">
         </li>
-        <li
-          class="game-field-item bg-teal-200 hover:bg-teal-900 w-24 h-24 rounded-sm cursor-pointer text-5xl flex items-center justify-center disabled">
-          O</li>
-        <li
+        <li data-col="2" data-row="1"
           class="game-field-item bg-teal-200 hover:bg-teal-900 w-24 h-24 rounded-sm cursor-pointer text-5xl flex items-center justify-center">
         </li>
-        <li
-          class="game-field-item bg-teal-200 hover:bg-teal-900 w-24 h-24 rounded-sm cursor-pointer text-5xl flex items-center justify-center disabled">
-          X
-        </li>
-        <li
+        <li data-col="3" data-row="1"
           class="game-field-item bg-teal-200 hover:bg-teal-900 w-24 h-24 rounded-sm cursor-pointer text-5xl flex items-center justify-center">
         </li>
-        <li
+        <li data-col="1" data-row="2"
           class="game-field-item bg-teal-200 hover:bg-teal-900 w-24 h-24 rounded-sm cursor-pointer text-5xl flex items-center justify-center">
         </li>
-        <li
+        <li data-col="2" data-row="2"
           class="game-field-item bg-teal-200 hover:bg-teal-900 w-24 h-24 rounded-sm cursor-pointer text-5xl flex items-center justify-center">
         </li>
-        <li
-          class="game-field-item bg-teal-200 hover:bg-teal-900 w-24 h-24 rounded-sm cursor-pointer text-5xl flex items-center justify-center disabled">
-          O
+        <li data-col="3" data-row="2"
+          class="game-field-item bg-teal-200 hover:bg-teal-900 w-24 h-24 rounded-sm cursor-pointer text-5xl flex items-center justify-center">
+        </li>
+        <li data-col="1" data-row="3"
+          class="game-field-item bg-teal-200 hover:bg-teal-900 w-24 h-24 rounded-sm cursor-pointer text-5xl flex items-center justify-center">
+        </li>
+        <li data-col="2" data-row="3"
+          class="game-field-item bg-teal-200 hover:bg-teal-900 w-24 h-24 rounded-sm cursor-pointer text-5xl flex items-center justify-center">
+        </li>
+        <li data-col="3" data-row="3"
+          class="game-field-item bg-teal-200 hover:bg-teal-900 w-24 h-24 rounded-sm cursor-pointer text-5xl flex items-center justify-center">
         </li>
       </ol>
     </section>

@@ -548,6 +548,9 @@
   .w-24 {
     width: calc(var(--spacing) * 24);
   }
+  .min-w-\[245px\] {
+    min-width: 245px;
+  }
   .cursor-pointer {
     cursor: pointer;
   }
