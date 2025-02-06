@@ -530,6 +530,9 @@
   .my-4 {
     margin-block: calc(var(--spacing) * 4);
   }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
   .block {
     display: block;
   }
@@ -547,6 +550,9 @@
   }
   .w-24 {
     width: calc(var(--spacing) * 24);
+  }
+  .w-\[80\%\] {
+    width: 80%;
   }
   .min-w-\[245px\] {
     min-width: 245px;
@@ -594,6 +600,9 @@
   .bg-teal-200 {
     background-color: var(--color-teal-200);
   }
+  .bg-teal-800 {
+    background-color: var(--color-teal-800);
+  }
   .bg-teal-900 {
     background-color: var(--color-teal-900);
   }
@@ -635,6 +644,10 @@
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
   .text-5xl {
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
@@ -665,6 +678,9 @@
   }
   .text-red-800 {
     color: var(--color-red-800);
+  }
+  .text-teal-100 {
+    color: var(--color-teal-100);
   }
   .text-teal-800 {
     color: var(--color-teal-800);

@@ -6,6 +6,8 @@ const gameData = [
 
 let editedPlayer = 0;
 let activePlayer = 0;
+let currentRound = 1;
+let gameIsOver = false;
 
 const players = [
   {
@@ -26,6 +28,7 @@ const playerTurnElement = document.getElementById('player-turn');
 const gameFieldElement = document.getElementById('game-field');
 const gameFieldItems = gameFieldElement.querySelectorAll('li.game-field-item');
 const activePlayerNameElement = document.getElementById('active-player-name');
+const gameOverElement = document.getElementById('game-over');
 
 const editPlayer1BtnElement = document.getElementById('edit-player-1-btn');
 const editPlayer2BtnElement = document.getElementById('edit-player-2-btn');

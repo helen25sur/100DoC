@@ -12,6 +12,7 @@
   "type": "commonjs",
   "dependencies": {
     "@tailwindcss/cli": "^4.0.3",
-    "tailwindcss": "^4.0.3"
+    "tailwindcss": "^4.0.3",
+    "tic-tac-toe": "file:"
   }
 }
