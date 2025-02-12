@@ -92,7 +92,6 @@ button {
 
 .btn.outline:hover {
   background-color: rgb(221, 221, 221);
-  /* color: white; */
 }
 
 .btn.fill {
