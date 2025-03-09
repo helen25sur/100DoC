@@ -1,16 +1,1 @@
-[
-  {
-    "name": "Test",
-    "address": "Testaddres",
-    "cuisine": "Mexican",
-    "website": "https://test.com",
-    "description": "I like it"
-  },
-  {
-    "name": "Restaurant 2",
-    "address": "Testaddress",
-    "cuisine": "Mexican",
-    "website": "https://test.com",
-    "description": "Good one"
-  }
-]
+[{"id":"r1","name":"Test","address":"Testaddres","cuisine":"Mexican","website":"https://test.com","description":"I like it"},{"id":"r2","name":"Restaurant 2","address":"Testaddress","cuisine":"Mexican","website":"https://test.com","description":"Good one"},{"name":"Restaurant 3","address":"Testaddress3","cuisine":"German","website":"https://test3.com","description":"I like simple, but great dishes!","id":"dadbdd40-2709-43e4-9b3a-64579cae66f9"}]

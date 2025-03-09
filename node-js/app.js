@@ -2,6 +2,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const uuid = require('uuid');
 
 // create app
 const app = express();
@@ -31,12 +32,22 @@ app.get('/restaurants', (req, res) => {
   res.render('restaurants', { countRestaurants: arrData.length, restaurants: arrData });
 });
 
+app.get('/restaurants/:id', (req, res) => {
+  const restaurantId = req.params.id;
+  const pathFile = path.join(__dirname, 'data', 'restaurants.json');
+  const fileData = fs.readFileSync(pathFile);
+  const arrData = JSON.parse(fileData);
+  const currentRestaurant = arrData.filter(item => item.id === restaurantId);
+  res.render('restaurant-details', { restaurant: currentRestaurant[0] });
+});
+
 app.get('/recommend', (req, res) => {
   res.render('recommend');
 });
 
 app.post('/recommend', (req, res) => {
   const restaurant = req.body;
+  restaurant.id = uuid.v4();
   const pathFile = path.join(__dirname, 'data', 'restaurants.json');
   const fileData = fs.readFileSync(pathFile);
   const arrData = JSON.parse(fileData);
