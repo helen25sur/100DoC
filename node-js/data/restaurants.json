@@ -1,1 +1,16 @@
-[{"name":"Test","address":"Testaddres","cuisine":"Mexican","website":"https://test.com","description":"I like it"}]
+[
+  {
+    "name": "Test",
+    "address": "Testaddres",
+    "cuisine": "Mexican",
+    "website": "https://test.com",
+    "description": "I like it"
+  },
+  {
+    "name": "Restaurant 2",
+    "address": "Testaddress",
+    "cuisine": "Mexican",
+    "website": "https://test.com",
+    "description": "Good one"
+  }
+]

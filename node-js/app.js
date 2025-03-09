@@ -6,6 +6,10 @@ const fs = require('fs');
 // create app
 const app = express();
 
+app.set('views', path.join(__dirname, 'views'));
+// add template engine
+app.set('view engine', 'ejs');
+
 // middleware for static files into public folder
 app.use(express.static('public'));
 // for reading and writing into files
@@ -13,18 +17,22 @@ app.use(express.urlencoded({extended: false}));
 
 // 1. Create route to '/' path
 app.get('/', (req, res) => {
-  const filePath = path.join(__dirname, 'views', 'index.html');
-  res.sendFile(filePath);
+  // const filePath = path.join(__dirname, 'views', 'index.html');
+  // res.sendFile(filePath);
+
+  // ejs gives possibility to render page, not sendFile
+  res.render('index');
 });
 
 app.get('/restaurants', (req, res) => {
-  const filePath = path.join(__dirname, 'views', 'restaurants.html');
-  res.sendFile(filePath);
+  const pathFile = path.join(__dirname, 'data', 'restaurants.json');
+  const fileData = fs.readFileSync(pathFile);
+  const arrData = JSON.parse(fileData);
+  res.render('restaurants', { countRestaurants: arrData.length, restaurants: arrData });
 });
 
 app.get('/recommend', (req, res) => {
-  const filePath = path.join(__dirname, 'views', 'recommend.html');
-  res.sendFile(filePath);
+  res.render('recommend');
 });
 
 app.post('/recommend', (req, res) => {
@@ -40,13 +48,11 @@ app.post('/recommend', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-  const filePath = path.join(__dirname, 'views', 'about.html');
-  res.sendFile(filePath);
+  res.render('about');
 });
 
 app.get('/confirm', (req, res) => {
-  const filePath = path.join(__dirname, 'views', 'confirm.html');
-  res.sendFile(filePath);
+  res.render('confirm');
 });
 
 // listen port
